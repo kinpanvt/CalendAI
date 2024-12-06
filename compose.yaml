@@ -1,0 +1,20 @@
+services:
+  mariadb:
+    image: mariadb
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
+    container_name: mariadb
+    restart: no
+    ports:
+      - 9090:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 5KoB&YZEc%iXFdE%
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: //insert your password
+      MYSQL_DATABASE: ai-calendar-db
+    
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: no
+    ports:
+      - 127.0.0.1:8080:8080
